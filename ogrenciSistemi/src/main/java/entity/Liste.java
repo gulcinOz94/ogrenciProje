@@ -134,7 +134,8 @@ public class Liste {
 				}
 			}
 			liste.remove(index);
-			
+			FacesContext context = FacesContext.getCurrentInstance();
+			context.addMessage(null, new FacesMessage("Silme işlemi başarılı bir şekilde yapılmıştır."));
 			
 		} catch (Exception e) {
             if (transaction != null) {
