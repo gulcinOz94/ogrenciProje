@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head><h1>KAYIT</h1></h:head> 
+<body> 
+<h:form id="myform">
+  
+    <h:messages globalOnly="true" style="color:red;margin:8px;" />
+  
+    <h:outputText value="Name: "/>
+    <h:inputText label="Name" value="#{dataBean.data.name}" /><br/><br/>
+    
+    <h:outputText value="Surname: "/>
+    <h:inputText label="Surname" value="#{dataBean.data.surname}" /><br/><br/>
+    
+    <h:outputText value="Phone: "/>
+    <h:inputText label="Phone" value="#{dataBean.data.phone}" /><br/><br/>
+    
+    <h:outputText value="City: "/>
+    <h:inputText label="City" value="#{dataBean.data.city}" /><br/><br/>
+    
+    <h:outputText value="District: "/>
+    <h:inputText label="District" value="#{dataBean.data.district}" /><br/><br/>
+    
+    <h:outputText value="Description: "/>
+    <h:inputText label="Description" value="#{dataBean.data.description}" /><br/><br/>
+    
+    
+    
+  
+	
+    
+    <h:commandButton value="Kaydet" action="#{dataBean.save()}" onclick="" />
+    <p><button onclick="location.href='/ogrenciSistemi/faces/ogrenci.xhtml'" type="button">Geri Dön</button></p>
+    
+
+    
+</h:form>
+</body> 
+</html>

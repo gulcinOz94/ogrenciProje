@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head><h1>LİSTE</h1></h:head> 
+<h:body> 
+	<h:form id="form">
+		<h:dataTable value="#{liste.liste}" var="x">
+			<h:column headerText="ID">
+				<h:outputText value="#{x.id}" />
+			</h:column>	
+			
+			<h:column headerText="NAME">
+				<h:outputText value="#{x.name}" />
+			</h:column>		
+			
+			<h:column headerText="SURNAME">
+				<h:outputText value="#{x.surname}" />
+			</h:column>		
+			
+			<h:column headerText="PHONE">
+				<h:outputText value="#{x.phone}" />
+			</h:column>		
+			
+			<h:column headerText="CITY">
+				<h:outputText value="#{x.city}" />
+			</h:column>		
+			
+			<h:column headerText="DISTRICT">
+				<h:outputText value="#{x.district}" />
+			</h:column>		
+			
+			<h:column headerText="DESCRIPTION">
+				<h:outputText value="#{x.description}" />
+			</h:column>
+			<h:column>    				
+    			<f:facet name="header">Action</f:facet>    				
+   			 	<h:commandLink value="Sil" action="#{liste.silIslemi(x.id)}" />    				
+			</h:column>
+					
+		</h:dataTable>
+		
+    <p><button onclick="location.href='/ogrenciSistemi/faces/ogrenci.xhtml'" type="button">Geri Dön</button></p>
+	</h:form>
+</h:body> 
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
