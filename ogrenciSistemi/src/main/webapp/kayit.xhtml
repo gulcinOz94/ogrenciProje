@@ -2,7 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"> 
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
 
 <h:head><h1>KAYIT</h1></h:head> 
 <body> 
@@ -29,9 +30,7 @@
     <h:inputText label="Description" value="#{dataBean.data.description}" /><br/><br/>
     
     
-    
-  
-	
+   
     
     <h:commandButton value="Kaydet" action="#{dataBean.save()}" onclick="" />
     <p><button onclick="location.href='/ogrenciSistemi/faces/ogrenci.xhtml'" type="button">Geri Dön</button></p>
@@ -39,5 +38,12 @@
 
     
 </h:form>
+ <h:form>
+    	<p:fileUpload fileUploadListener="#{fileUploadController.upload}" mode="advanced" dragDropSupport="false"
+           update="messages" sizeLimit="1000000" fileLimit="3" allowTypes="/(\.|\/)(gif|jpe?g|png|docx|pdf)$/" />
+ 
+    	<p:growl id="messages" showDetail="true" />
+    	<h3>Maximum size: 1 MB</h3>
+	</h:form>
 </body> 
 </html>

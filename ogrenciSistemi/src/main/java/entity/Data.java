@@ -14,9 +14,13 @@ import javax.persistence.TableGenerator;
 
 
 
+
 @Entity
 @Table(name = "OGRENCI")
 public class Data {
+	
+	
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
@@ -38,6 +42,7 @@ public class Data {
 	@Column
 	private String description;
 	
+	
 	public Data() {
 		super();
 	}
@@ -52,9 +57,15 @@ public class Data {
 		this.description = description;
 		
 	}
-	@Override
-	public String toString() {
-		return "Contact [name=" + getName() + ", surname=" + getSurname() + ", phone=" + getPhone() + ",city=" + getCity() + ",district=" + getDistrict() + ", description=" + getDescription() + "]";
+	public Data(String name, String surname, String phone, String city, String district, String description) {
+		super();
+		this.name = name;
+		this.surname = surname;
+		this.phone = phone;
+		this.city = city;
+		this.district = district;
+		this.description = description;
+		
 	}
 	
 	public int getId() {
@@ -100,9 +111,11 @@ public class Data {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
-	
-	
+
+	@Override
+	public String toString() {
+		return "Contact [name=" + getName() + ", surname=" + getSurname() + ", phone=" + getPhone() + ",city=" + getCity() + ",district=" + getDistrict() + ", description=" + getDescription() + "]";
+	}
 	
 }
 

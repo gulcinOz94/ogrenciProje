@@ -32,4 +32,5 @@ public class DataBean {
 		return "success?faces-redirect=true";
 	}
 	
+	
 }

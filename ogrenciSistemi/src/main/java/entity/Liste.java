@@ -32,6 +32,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+
 @ManagedBean
 @RequestScoped
 public class Liste {
@@ -77,7 +78,7 @@ public class Liste {
 	}
 	
 	
-	public void silIslemi(int id) throws ClassNotFoundException, SQLException {
+	public void silIslemi(int id){
 		Session session = null;
 		Transaction transaction = null;
 		
@@ -87,8 +88,7 @@ public class Liste {
 			transaction=session.beginTransaction();
 			session.remove(data);
 			transaction.commit();
-			
-					
+								
 			int index=0;
 			for(int i=0;i<liste.size();i++) {
 				if(liste.get(i).getId()==id) {
@@ -101,9 +101,6 @@ public class Liste {
 			context.addMessage(null, new FacesMessage("Silme işlemi başarılı bir şekilde yapılmıştır."));
 			
 		} catch (Exception e) {
-            if (transaction != null) {
-                transaction.rollback();
-            }
             e.printStackTrace();
         }		
 
@@ -134,6 +131,8 @@ public class Liste {
 				}
 			}
 			liste.remove(index);
+			FacesContext context = FacesContext.getCurrentInstance();
+			context.addMessage(null, new FacesMessage("Silme işlemi başarılı bir şekilde yapılmıştır."));
 			
 		} catch (Exception e) {
             if (transaction != null) {
